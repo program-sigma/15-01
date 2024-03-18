@@ -1,0 +1,35 @@
+<h1 class="display-4">
+    {{message}}
+</h1>
+<div id="scrollableContainer" class="overflow-auto">
+    <ul class="list-group">
+        {{#each producs}}
+            <li class="list-group-item">
+                {{>contact}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+<form class="form d-flex" data-key="{{currentContact.id}}">
+    <div class="m-3">
+        <label for="name">Name</label>
+        <input id="name" class="form-control " type="text" required name="name" placeholder="Name" value="{{currentContact.name}}"
+               oninput="blockButton('{{currentContact.name}}', '{{currentContact.phone}}')"/>
+    </div>
+    <div class="m-3">
+        <label for="phone">Phone</label>
+        <input class="form-control" type="tel" required name="phone" placeholder="Phone" value="{{currentContact.phone}}"
+               oninput="blockButton('{{currentContact.name}}', '{{currentContact.phone}}')"/>
+    </div>
+</form>
+<div class="controls-wrapper d-flex justify-content-between">
+    <div class="form-part control m-3 w30">
+        <button class="btn btn-primary" onclick="updateContact()">Ok</button>
+    </div>
+    <div class="form-part control m-3">
+        <button class="btn btn-danger" onclick="deleteContact()" id="delete-button">Delete</button>
+    </div>
+    <div class="form-part control m-3">
+        {{{cancelButton}}}
+    </div>
+</div>

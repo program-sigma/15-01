@@ -1,0 +1,7 @@
+<a class="contact dropdown-item d-flex align-items-center gap-2 d-flex justify-content-between" data-key="{{id}}"
+{{#if @root.buttonsEnabled}}
+   onclick="window.location.href = '/Update?id={{id}}'"
+{{/if}}>
+    <p class="text-bg-success rounded-pill display-6">{{name}}</p>
+    <p class="bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill p-2">{{phone}}</p>
+</a>

@@ -1,0 +1,15 @@
+<h1 class="display-4">
+    {{message}}
+</h1>
+<div id="scrollableContainer " class="overflow-auto p-2 mb-2 bg-body-tertiary border-bottom">
+    <ul class="list-unstyled mb-0">
+        {{#each producs}}
+            <li class="">
+                {{>contact}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+<button class="btn btn-primary">
+    <a href="/add" class="text-white text-decoration-none">Добавить</a>
+</button>
